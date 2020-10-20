@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+part of 'timer_bloc.dart';
 
 abstract class TimerState extends Equatable {
   final int duration;
@@ -13,21 +13,21 @@ class TimerInitial extends TimerState {
   const TimerInitial(int duration) : super(duration);
 
   @override
-  String toString() => 'TimerInitial { duration: $duration}';
+  String toString() => 'TimerInitial { duration: $duration }';
 }
 
 class TimerRunPause extends TimerState {
   const TimerRunPause(int duration) : super(duration);
 
   @override
-  String toString() => 'TimerRunPause { duration:$duration}';
+  String toString() => 'TimerRunPause { duration: $duration }';
 }
 
 class TimerRunInProgress extends TimerState {
   const TimerRunInProgress(int duration) : super(duration);
 
   @override
-  String toString() => 'TimerRunInProgress {duration:$duration}';
+  String toString() => 'TimerRunInProgress { duration: $duration }';
 }
 
 class TimerRunComplete extends TimerState {
