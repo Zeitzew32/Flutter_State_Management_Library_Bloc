@@ -15,6 +15,17 @@ class PostBloc extends Bloc<PostEvent, PostState> {
   PostBloc({@required this.httpClient}) : super(PostInitial());
 
   @override
+  Stream<Transition<PostEvent, PostState>> transformEvents(
+    Stream<PostEvent> events,
+    TransitionFunction<PostEvent, PostState> transitionFn,
+  ) {
+    return super.transformEvents(
+      events.debounceTime(const Duration(milliseconds: 500)),
+      transitionFn,
+    );
+  }
+
+  @override
   Stream<PostState> mapEventToState(PostEvent event) async* {
     final currentState = state;
     if (event is PostFetched && !_hasReachedMax(currentState)) {
@@ -57,16 +68,5 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     } else {
       throw Exception('error fetching posts');
     }
-  }
-
-  @override
-  Stream<Transition<PostEvent, PostState>> transformEvents(
-    Stream<PostEvent> events,
-    TransitionFunction<PostEvent, PostState> transitionFn,
-  ) {
-    return super.transformEvents(
-      events.debounceTime(const Duration(milliseconds: 500)),
-      transitionFn,
-    );
   }
 }

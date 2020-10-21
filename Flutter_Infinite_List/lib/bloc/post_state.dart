@@ -36,5 +36,5 @@ class PostSuccess extends PostState {
 
   @override
   String toString() =>
-      'Post Success { posts: ${posts.length}, hasreachedMax: $hasReachedMax }';
+      'PostSuccess { posts: ${posts.length}, hasReachedMax: $hasReachedMax }';
 }
