@@ -5,6 +5,7 @@ class CitySelection extends StatefulWidget {
   State<CitySelection> createState() => _citySelectionState();
 }
 
+// ignore: camel_case_types
 class _citySelectionState extends State<CitySelection> {
   final TextEditingController _textController = TextEditingController();
 
