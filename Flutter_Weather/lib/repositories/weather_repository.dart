@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:meta/meta.dart';
 
-import 'weather_api_client.dart';
+import 'package:Flutter_Weather/repositories/weather_api_client.dart';
 import 'package:Flutter_Weather/models/models.dart';
 
 class WeatherRepository {

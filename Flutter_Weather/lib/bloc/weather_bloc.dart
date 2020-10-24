@@ -22,6 +22,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
         final Weather weather = await weatherRepository.getWeather(event.city);
         yield WeatherLoadSuccess(weather: weather);
       } catch (_) {
+        print("alex sucks");
         yield WeatherLoadFailure();
       }
     }

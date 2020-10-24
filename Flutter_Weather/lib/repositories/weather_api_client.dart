@@ -4,7 +4,7 @@ import 'package:meta/meta.dart';
 import 'package:http/http.dart' as http;
 
 class WeatherApiClient {
-  static const baseUrl = 'https://www.metaweather.dart';
+  static const baseUrl = 'https://www.metaweather.com';
   final http.Client httpClient;
 
   WeatherApiClient({
