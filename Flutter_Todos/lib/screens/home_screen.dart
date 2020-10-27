@@ -16,14 +16,14 @@ class HomeScreen extends StatelessWidget {
             title: Text(FlutterBlocLocalizations.of(context).appTitle),
             actions: [
               FilterButton(visible: activeTab == AppTab.todos),
-              ExtraButtons(),
+              ExtraAction(),
             ],
           ),
           body: activeTab == AppTab.todos ? FilterTodos() : Stats(),
           floatingActionButton: FloatingActionButton(
             key: ArchSampleKeys.addTodoFab,
             onPressed: () {
-              Navigator.pushNamed(context, ArchSampleRoutes.addTodos);
+              Navigator.pushNamed(context, ArchSampleRoutes.addTodo);
             },
             child: Icon(Icons.add),
             tooltip: ArchSampleLocalizations.of(context).addTodo,
