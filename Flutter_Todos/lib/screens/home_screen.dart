@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
           ),
           body: activeTab == AppTab.todos ? FilterTodos() : Stats(),
           floatingActionButton: FloatingActionButton(
-            key: ArchSimpleKeys.addTodoFab,
+            key: ArchSampleKeys.addTodoFab,
             onPressed: () {
               Navigator.pushNamed(context, ArchSampleRoutes.addTodos);
             },
