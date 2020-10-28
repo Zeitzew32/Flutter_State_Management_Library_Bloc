@@ -1,9 +1,12 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:Flutter_Todos/blocs/todos/todos.dart';
 import 'package:Flutter_Todos/models/models.dart';
 import 'package:todos_repository_simple/todos_repository_simple.dart';
+import 'package:equatable/equatable.dart';
+
+part 'todos_event.dart';
+part 'todos_state.dart';
 
 class TodosBloc extends Bloc<TodosEvent, TodosState> {
   final TodosRepositoryFlutter todosRepository;
@@ -11,10 +14,8 @@ class TodosBloc extends Bloc<TodosEvent, TodosState> {
   TodosBloc({@required this.todosRepository}) : super(TodosLoadInProgress());
 
   @override
-  Stream<TodosState> mapEventToState(
-    TodosEvent event,
-  ) async* {
-    if (event is TodosLoadSuccess) {
+  Stream<TodosState> mapEventToState(TodosEvent event) async* {
+    if (event is TodosLoadedSuccess) {
       yield* _mapTodosLoadedToState();
     } else if (event is TodoAdded) {
       yield* _mapTodoAddedToState(event);
@@ -96,7 +97,8 @@ class TodosBloc extends Bloc<TodosEvent, TodosState> {
   }
 
   Future _saveTodos(List<Todo> todos) {
-    return todosRepository
-        .saveTodos(todos.map((todo) => todo.toEntity()).toList());
+    return todosRepository.saveTodos(
+      todos.map((todo) => todo.toEntity()).toList(),
+    );
   }
 }

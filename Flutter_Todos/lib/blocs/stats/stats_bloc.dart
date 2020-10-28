@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:Flutter_Todos/blocs/todos/todos.dart';
+import 'package:Flutter_Todos/blocs/todos/todos_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';

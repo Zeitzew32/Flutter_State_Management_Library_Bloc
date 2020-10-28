@@ -1,5 +1,4 @@
-import 'package:equatable/equatable.dart';
-import 'package:Flutter_Todos/models/models.dart';
+part of 'todos_bloc.dart';
 
 abstract class TodosEvent extends Equatable {
   const TodosEvent();
@@ -8,7 +7,7 @@ abstract class TodosEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class TodosInitial extends TodosEvent {}
+class TodosLoadedSuccess extends TodosEvent {}
 
 class TodoAdded extends TodosEvent {
   final Todo todo;
@@ -31,7 +30,7 @@ class TodoUpdated extends TodosEvent {
   List<Object> get props => [todo];
 
   @override
-  String toString() => 'TodoUpdated { todo: $todo}';
+  String toString() => 'TodoUpdated { todo: $todo }';
 }
 
 class TodoDeleted extends TodosEvent {

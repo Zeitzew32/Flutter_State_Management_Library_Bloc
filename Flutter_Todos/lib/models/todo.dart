@@ -30,7 +30,7 @@ class Todo extends Equatable {
 
   @override
   String toString() {
-    return 'Todo { complete: $complete, task: $task, note: $note, id:$id }';
+    return 'Todo { complete: $complete, task: $task, note: $note, id: $id }';
   }
 
   TodoEntity toEntity() {

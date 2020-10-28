@@ -3,12 +3,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todos_app_core/todos_app_core.dart';
-import 'package:Flutter_Todos/blocs/todos/todos.dart';
+import 'package:Flutter_Todos/blocs/todos/todos_bloc.dart';
 import 'package:Flutter_Todos/models/models.dart';
 import 'package:Flutter_Todos/flutter_todos_keys.dart';
 
-class ExtraAction extends StatelessWidget {
-  ExtraAction({Key key}) : super(key: ArchSampleKeys.extraActionsButton);
+class ExtraActions extends StatelessWidget {
+  ExtraActions({Key key}) : super(key: ArchSampleKeys.extraActionsButton);
 
   @override
   Widget build(BuildContext context) {

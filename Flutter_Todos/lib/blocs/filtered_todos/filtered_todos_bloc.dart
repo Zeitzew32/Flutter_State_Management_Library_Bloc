@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'filtered_todos.dart';
-import '../todos/todos.dart';
+import '../todos/todos_bloc.dart';
 import 'package:Flutter_Todos/models/models.dart';
 
 class FilteredTodosBloc extends Bloc<FilteredTodosEvent, FilteredTodosState> {
