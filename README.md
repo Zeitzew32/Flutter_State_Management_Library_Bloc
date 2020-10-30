@@ -1,11 +1,9 @@
-# Flutter_BLoC_Library
-
-Me learning Flutter, one tutorial at a time. 
+# Flutter_BLoC_Library 
 
 All of these folders have functional apps inside of them. 
-Everything before this beyond is without Firebase, which are in seperate private repositories. 
+Everything beyond this point is without Firebase. 
 
-This time from https://bloclibrary.dev/#/
+Thank you https://bloclibrary.dev/#/
 
 
 
